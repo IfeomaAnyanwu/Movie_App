@@ -1,0 +1,846 @@
+/*
+==================================================== 
+Fonts
+======================================================
+*/
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
+
+/*
+=================================================== 
+Variables
+===================================================
+*/
+
+:root {
+  --clr-dark-orange: rgb(105, 69, 7);
+  --clr-dark-orange-2: rgb(199, 132, 16);
+  --clr-navy-blue: hsl(246, 79%, 19%);
+  --clr-navy-blue-2: rgb(19, 41, 99);
+  --clr-navy-blue-3: rgba(19, 40, 99, 0.626);
+  --clr-dark-grey: hsl(270, 2%, 20%);
+  --clr-grey-2: hsl(273, 4%, 30%);
+  --clr-grey-3: hsl(275, 6%, 34%);
+  --clr-grey-4: #888585;
+  --clr-light-grey: hsl(0, 0%, 95%);
+  --clr-grey-5: hsl(276, 33%, 90%);
+  --clr-grey-6: hsl(274, 36%, 96%);
+  --clr-white: #fff;
+  --ff-primary: "Lato", sans-serif;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --clr-border-radius: 10%;
+  --clr-border-radius-2: 5%;
+  /* for nav-toggle */
+  --transition: all 0.3s linear;
+}
+
+/*
+===============================================
+Global Styles
+===============================================
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--clr-mdcnbody);
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.12rem;
+  cursor: pointer;
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--clr-dark-grey);
+  font-weight: bold;
+  /* fix footer on page bottom*/
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+=============================================== 
+Nav Bar
+===============================================
+*/
+
+#nav-bar {
+  display: flex;
+  gap: 5rem;
+  background-color: var(--clr-navy-blue-2);
+  width: 100vw;
+  height: 4rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-white);
+  /* dropdown styling for navbar*/
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+#logo,
+#logo2,
+#logo3 {
+  text-transform: uppercase;
+  color: var(--clr-dark-orange-2);
+  font-size: 2rem;
+  letter-spacing: -0.15rem;
+}
+
+#logo span,
+#logo2 span,
+#logo3 span {
+  text-transform: capitalize;
+  color: var(--clr-white);
+}
+
+ul {
+  display: flex;
+  gap: 2.5rem;
+}
+
+li {
+  list-style-type: none;
+  padding: 0.5rem;
+}
+
+a {
+  color: var(--clr-white);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+#search-page {
+  padding: 0.5rem;
+  background-color: transparent;
+  color: white;
+}
+
+#sign-in {
+  color: var(--clr-white);
+  font-size: 1rem;
+  background-color: transparent;
+  border: 2px solid var(--clr-dark-orange-2);
+  text-transform: capitalize;
+  padding: 0.45rem;
+  border-radius: var(--clr-border-radius);
+}
+
+/*
+=============================================
+Navbar Drop Down
+=============================================
+*/
+
+/* Style the dropdown menu */
+
+/*  Dropdown ul*/
+#nav-bar ul ul {
+  position: absolute;
+  top: 100%;
+  display: none;
+  list-style-type: none;
+  /* neagtive margin stops disappering hover */
+  margin: -0.7rem;
+  padding: 0;
+  background: var(--clr-white);
+  border-radius: var(--clr-border-radius-2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  width: 12rem;
+}
+
+/*  chnaging background color on hover */
+#nav-bar ul li:hover {
+  background-color: var(--clr-dark-orange-2);
+  border-radius: var(--clr-border-radius);
+}
+
+/*  Dropdown li */
+#nav-bar ul ul li {
+  display: block;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+/*  Dropdown li on hover*/
+#nav-bar ul ul li:hover {
+  background-color: var(--clr-grey-6);
+}
+
+/*  Dropdown ul on li hover */
+#nav-bar li:hover ul {
+  display: block;
+}
+
+/*  Dropdown links */
+#nav-bar ul ul li a {
+  color: var(--clr-navy-blue);
+}
+
+/*
+=============================================
+Hero Image
+=============================================
+*/
+
+#hero img {
+  width: 80vw;
+  height: 20rem;
+}
+
+#hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: -16rem;
+  gap: 1.6rem;
+  color: var(--clr-white);
+}
+
+#hero-text h1 {
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+#hero-text h2 {
+  width: 45rem;
+}
+
+#hero-text input {
+  width: 58vw;
+  height: 2rem;
+}
+
+#search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search input {
+  border-top-left-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+}
+
+::placeholder,
+input {
+  padding-left: 1rem;
+  color: var(--clr-grey-2);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#hero-text button {
+  height: 2rem;
+  width: 5rem;
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/*
+=============================================
+Movies Section
+=============================================
+*/
+
+#movie-section {
+  margin-top: -12rem;
+}
+
+#movie-section h1 {
+  font-size: 2rem;
+  text-align: left;
+  margin-left: 10%;
+}
+
+/* Movie Container */
+
+#movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.other-movies {
+  padding-top: 12rem;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  /* min-height and 0 margin-top stopped over shooting card img  */
+  min-height: 370px;
+  margin-inline: 30px;
+  margin-bottom: 3rem;
+  margin-top: 0;
+  border-radius: 5px;
+  background-color: var(--clr-white);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.drama-movies {
+  /*margin: 32rem 30px;*/
+  margin-inline: 30px;
+  margin-top: 2.5rem;
+}
+
+.movie-card img {
+  margin-top: -3rem;
+  border-radius: 5px;
+  height: 70%;
+  width: 100%;
+}
+
+.movie-rating {
+  position: relative;
+  z-index: 1;
+  color: var(--clr-white);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  top: 1rem;
+  left: 8rem;
+  background-color: var(--clr-navy-blue-3);
+  line-height: 2rem;
+  padding: 0.5rem;
+}
+
+.movie-title {
+  text-align: left;
+  margin-top: 10px;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--clr-dark-grey);
+}
+
+.movie-release-date {
+  text-align: left;
+  font-weight: normal;
+  font-size: 0.8rem;
+  padding-left: 0.5rem;
+}
+
+/*
+.movie-overview {
+  margin-top: 10px;
+  font-size: 1rem;
+  color:;
+}
+*/
+
+.active {
+  background-color: var(--clr-dark-orange-2);
+  border-radius: var(--clr-border-radius);
+}
+
+/*
+=============================================
+Footer Section
+=============================================
+*/
+
+#footer {
+  height: 20rem;
+  width: 100vw;
+  background-color: var(--clr-navy-blue-2);
+  color: var(--clr-white);
+
+  /* fix footer to page bottom */
+  margin-top: auto;
+}
+
+/* Footer text*/
+#footer-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+#quick-links,
+#the-basics,
+#legal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+#footer-text logo {
+  padding-top: 2rem;
+}
+
+#quick-links {
+  padding-top: 6rem;
+}
+
+#logo2 {
+  padding-top: 2rem;
+}
+
+#legal,
+#the-basics {
+  padding-top: 3rem;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+/* CopyRight
+.copyright-wrapper{
+  position:relative;
+  top: 15rem;
+}
+
+*/
+
+/*
+=============================================
+Contact us
+=============================================
+*/
+
+#contact-heading,
+#aboutus-heading {
+  text-align: left;
+  padding: 3rem 5rem;
+  font-size: 2rem;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 50vw;
+  margin: 0rem 0rem 7rem 5rem;
+}
+
+#form input,
+textarea {
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  border: 0.1px solid grey;
+  color: var(--clr-dark-grey);
+  font-size: 1rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--clr-grey-4);
+  font-size: 1rem;
+  padding-left: 0.2rem;
+}
+
+/*
+=============================================
+About us
+=============================================
+*/
+
+#about-us p {
+  width: 50vw;
+  color: var(--clr-dark-grey);
+  font-size: 1rem;
+  text-align: justify;
+  margin: 0rem 0rem 7rem 5rem;
+  line-height: 2rem;
+  text-transform: initial;
+}
+
+/*
+=============================================
+Sign in 
+=============================================
+*/
+
+.back-image {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.897), rgba(185, 86, 14, 0)),
+    url("./images/musician.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.sign-in-div {
+  position: relative;
+  background-color: var(--clr-grey-6);
+  height: 83%;
+  width: 27%;
+  margin: auto;
+  top: 3rem;
+  border-radius: 0.3rem;
+}
+
+#logo3 {
+  padding: 2rem 0rem;
+  font-size: 1.7rem;
+}
+
+#logo3 span {
+  color: var(--clr-navy-blue);
+}
+
+#signin-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#signin-form input {
+  padding: 0.7rem 0rem;
+  border-radius: 0.3rem;
+  color: var(--clr-dark-grey);
+  font-size: 1rem;
+  border: none;
+}
+
+#sign-in-submit {
+  background-color: var(--clr-grey-5);
+}
+
+#sign-fontawesome {
+  width: 100%;
+}
+
+.fa-brands {
+  padding: 0.7rem 2.5rem;
+  color: var(--clr-white);
+  border-radius: 0.3rem;
+  margin-top: 1.3rem;
+  margin-right: 0.3rem;
+  width: 30%;
+  text-align: center;
+}
+
+.fa-google {
+  background-color: #db4437;
+}
+
+.fa-twitter {
+  background-color: #00aaee;
+}
+
+.fa-facebook-f {
+  background-color: #3b5998;
+}
+
+#sign-up-div {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.3rem 0rem;
+}
+
+#sign-up,
+#sign-up-a,
+#forgot-password {
+  letter-spacing: -0.01rem;
+}
+
+#sign-up-a,
+#forgot-password {
+  color: var(--clr-dark-orange-2);
+  font-size: 1.1rem;
+}
+
+#sign-up-a:hover,
+#forgot-password:hover {
+  text-decoration: underline;
+}
+
+/*
+=============================================
+Sign Up 
+=============================================
+*/
+
+/*
+=============================================
+NAV TOGGLE BUTTON
+=============================================
+*/
+.nav-toggle {
+  display: none;
+}
+
+/* END OF BIG SCREEN STYLES */
+
+/*
+=============================================
+Tablet Screen
+=============================================
+*/
+
+@media screen and (max-width: 1279px) {
+  /*
+=============================================
+Tablet Screen Sign in 
+=============================================
+*/
+
+  .sign-in-div {
+    height: 75%;
+    width: 50%;
+  }
+
+  #sign-up-div {
+    padding-top: 3rem;
+  }
+
+  /*
+=============================================== 
+Tablet Nav Bar
+===============================================
+*/
+
+  #nav-bar {
+    height: 10rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  /*
+=============================================
+Tablet Navbar Drop Down
+=============================================
+*/
+
+  /*  Dropdown ul*/
+  #nav-bar ul ul {
+    top: 40%;
+    /* neagtive margin and top% stops disappering hover */
+    margin: -0.7rem;
+    padding: 0;
+    background: var(--clr-white);
+    border-radius: var(--clr-border-radius-2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    width: 12rem;
+  }
+
+  /* change dropdown flow of more*/
+  #more {
+    /* setting left and right%  width absolute changes dropdown left/right float*/
+    left: 70%;
+  }
+
+  /*
+=============================================
+Tablet Hero Image
+=============================================
+*/
+
+  #hero-text {
+    flex-wrap: wrap;
+    top: -18rem;
+  }
+
+  #hero-text h2 {
+    width: 38rem;
+  }
+
+  #hero-text input {
+    height: 2.7rem;
+  }
+
+  #hero-text button {
+    height: 2.7rem;
+  }
+
+  /*
+=============================================
+Tablet Footer Section
+=============================================
+*/
+
+  #footer {
+    min-height: 20rem;
+    /* fix footer to page bottom */
+    margin-top: auto;
+  }
+
+  /* Footer text*/
+  #footer-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.8rem;
+  }
+}
+/*
+=============================================
+Mobile Screen Nav
+=============================================
+*/
+
+@media screen and (max-width: 767px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .other-movies {
+    padding-top: 20rem;
+  }
+
+  #aboutus-heading,
+  #contact-heading {
+    padding-top: 8rem;
+  }
+
+  #nav-bar {
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+    background-color: var(--clr-white);
+    box-shadow: var(--dark-shadow);
+    position: fixed;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  #nav-header {
+    display: flex;
+    gap: 6rem;
+    width: 100%;
+    background-color: var(--clr-white);
+    padding-left: 1rem;
+  }
+
+  .active {
+    background-color: var(--clr-white);
+  }
+
+  #logo span {
+    color: var(--clr-navy-blue);
+  }
+
+  .nav-toggle {
+    background: transparent;
+    border: transparent;
+    font-size: 1.5rem;
+    color: var(--clr-dark-orange-2);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .nav-toggle:hover {
+    transform: scale(1.2);
+  }
+
+  .nav-link {
+    display: block;
+    padding: -1rem 2rem;
+    text-transform: capitalize;
+    letter-spacing: var(--spacing);
+    transition: var(--transition);
+    color: var(--clr-dark-orange-2);
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  .nav-link:hover {
+    color: var(--clr-white);
+    background: var(--clr-dark-orange-2);
+    padding-left: 2.25rem;
+  }
+
+  /*
+  #nav-bar {
+    display: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; 
+    background-color: var(--clr-white);
+    box-shadow: var(--dark-shadow);
+    z-index: 2;
+  }
+
+ 
+
+
+  /* Nav Toggle*/
+  .nav-links {
+    height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+  }
+
+  .show-links {
+    /*224px is ul height from inspec window*/
+    height: 224px;
+  }
+
+  #others,
+  #signIn {
+    display: none;
+  }
+
+  /*
+=============================================
+Mobile Screen Hero Image
+=============================================
+*/
+
+  #hero img {
+    display: none;
+  }
+
+  /*
+=============================================
+Mobile Screen Footer
+=============================================
+*/
+
+  #footer {
+    min-height: 40rem;
+    /* fix footer to page bottom */
+    margin-top: auto;
+  }
+
+  /* Footer text*/
+  #footer-text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  #quick-links {
+    padding-top: 2rem;
+  }
+
+  #logo2 {
+    padding-top: 2rem;
+    margin-left: -2rem;
+  }
+
+  #legal {
+    padding-top: 2rem;
+    margin-left: -2rem;
+  }
+
+  #the-basics {
+    padding-top: 2rem;
+    margin-left: -1rem;
+  }
+}

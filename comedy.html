@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>COMEDY</title>
+  </head>
+  <body>
+
+<!---------------Navigation bar starts--------------->
+    <nav id="nav-bar">
+      <div id="nav-header">
+        <div id="logo">just <span>flicks</span></div>
+        <button
+          type="button"
+          class="nav-toggle"
+          id="nav-toggle"
+          onclick="showNavLinks()"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <!---------End of logo and toggle bar-------->
+        <ul id="nav-links" class="nav-links">
+          <li><a href="index.html" class="nav-link scroll-link">home</a></li>
+          <li  class="active"><a href="" class="nav-link scroll-link">genres</a>
+          <ul>
+            <li><a href="drama.html">drama</a></li>
+            <li><a href="comedy.html">comedy</a></li>
+            <li><a href="adventure.html">adventure</a></li>
+            <li><a href="documentary.html">documentary</a></li>
+          </ul>
+          </li>
+          <li><a href="about.html" class="nav-link scroll-link">about</a></li>
+          <li><a href="contact.html" class="nav-link scroll-link">contact</a></li>
+<!----------More ---------------------------->
+          <li><a href="" class="nav-link scroll-link">more</a>
+          <ul>
+       <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms Of Use</a></li>     
+          </ul>
+          </li>
+<!--------More ends------------------------------>
+        </ul>
+        <div id="others">
+          <input type="text" id="search-page" placeholder="Search" />
+          <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+        </div>
+       <div id="signIn">
+        <a href="signIn.html" id="sign-in">sign in</a>
+      </div>
+      </nav>
+<!--------------------Navigation bar ends---------------->
+
+
+
+
+      <section id="movie-section" class="other-movies">
+        <h1>Comedy</h1>
+      <div id="movies"></div>
+        </div>
+      </section>
+
+<!--------------------movie section ends---------------->
+     <footer id="footer">
+  <!------------------footer text----------------->
+      <div id="footer-text">
+  <!----------------logo ----------------------->    
+      <div id="logo2">just <span>flicks</span></div>
+
+<!-------------------quick links ------------------> 
+      <div id="quick-links">
+        <h2>quick links</h2>
+        <a href="drama.html">drama</a>
+        <a href="comedy.html">comedy</a>
+        <a href="adventure.html">adventure</a>
+        <a href="documentary.html">documentary</a>
+      </div>
+<!------------------quick links ends-----------> 
+<!------the basics-------> 
+      <div id="the-basics">
+        <h2>the basics</h2>
+        <a href="about.html">About JustFlicks</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+<!------the basics ends-------> 
+
+      <div id="legal">
+        <h2>legal</h2>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+      </div>
+  <!------footer text ends------>
+  <!-----footer/copyright
+    <div class="copyright-wrapper">
+      <p class="copyright">
+        JustFlicks &copy;
+        <span id="date"></span> 
+      </p>
+    </div>
+    end of footer/copyright-->
+    </footer>
+<!--------------------footer ends---------------->
+
+
+    <script src="./script.js"></script>
+    <script>
+     //window.onload = getComedy();
+    document.ready = getComedy();
+    </script>
+    
+  </body>
+</html>
