@@ -18,12 +18,15 @@ const comedy_url =
 
 //ADVENTURE URL
 const adventure_url =
-  "https://api.themoviedb.org/3/discover/movie?api_key=0f0eb657aee65f5d179bddba1284e1ab&with_genres=12&page=2";
+  "https://api.themoviedb.org/3/discover/movie?api_key=0f0eb657aee65f5d179bddba1284e1ab&with_genres=12";
+
+//&page=2";
 
 //DOCUMENTARY URL
 const documentary_url =
   "https://api.themoviedb.org/3/discover/movie?api_key=0f0eb657aee65f5d179bddba1284e1ab&with_genres=99";
 
+// PART OF AUTHENTICATION WITH TMDB
 const options = {
   method: "GET",
   headers: {
@@ -38,6 +41,30 @@ fetch(url, options)
   .then((json) => console.log(json))
   .catch((err) => console.error("error:" + err));
 
+/*
+//===============================TESTING PLEASE DELETE LATER=====================================================//
+
+//THRILLER URL
+const thriller_url =
+  "https://api.themoviedb.org/3/discover/movie?api_key=0f0eb657aee65f5d179bddba1284e1ab&with_genres=37";
+
+//GET THRILLER
+
+function getThriller() {
+  //fetch drama genre on the TMDB url provided
+  fetch(thriller_url, options)
+    //convert the fetched drama code to json
+    .then((res) => res.json())
+    // log the code in json format as converted
+    //.then((json) => console.log(json))//change to the line below to call the render movie function
+    .then((json) => renderMovies(json.results)) //results is the array name of the 20 received movies.
+    //if there is error, catch and log it
+    .catch((err) => console.log("error:" + err));
+}
+
+//===============================END OF TESTING PLEASE DELETE LATER=====================================================//
+*/
+
 //GET ALL MOVIES
 function getMovies() {
   //fetch movies on the TMDB url provided
@@ -49,6 +76,11 @@ function getMovies() {
     .then((json) => renderMovies(json.results)) //results is the array name of the 20 received movies.
     //if there is error, catch and log it
     .catch((err) => console.log("error:" + err));
+}
+
+// PLAY POPULAR MOVIES
+function playPopular() {
+  window.location.assign("https://www.themoviedb.org/tv/3151-popular");
 }
 
 //GET DRAMA
@@ -65,6 +97,11 @@ function getDrama() {
     .catch((err) => console.log("error:" + err));
 }
 
+// PLAY DRAMA MOVIES
+function playDrama() {
+  window.location.assign("https://www.themoviedb.org/genre/18-drama/movie");
+}
+
 //GET COMEDY
 
 function getComedy() {
@@ -77,6 +114,11 @@ function getComedy() {
     .then((json) => renderMovies(json.results)) //results is the array name of the 20 received movies.
     //if there is error, catch and log it
     .catch((err) => console.log("error:" + err));
+}
+
+//PLAY COMEDY MOVIES
+function playComedy() {
+  window.location.assign("https://www.themoviedb.org/genre/35-drama/movie");
 }
 
 //GET ADVENTURE
@@ -93,6 +135,11 @@ function getAdventure() {
     .catch((err) => console.log("error:" + err));
 }
 
+//PLAY ADVENTURE MOVIES
+function playAdventure() {
+  window.location.assign("https://www.themoviedb.org/genre/12-drama/movie");
+}
+
 //GET DOCUMENTARY
 
 function getDocumentary() {
@@ -107,10 +154,9 @@ function getDocumentary() {
     .catch((err) => console.log("error:" + err));
 }
 
-//PLAY MOVIES, DRAMA ETC
-function playMovie() {
-  const play = window.open("https://www.themoviedb.org/movie");
-  return play;
+// PLAY DOCUMENTARY MOVIES
+function playDocumentary() {
+  window.location.assign("https://www.themoviedb.org/genre/99-drama/movie");
 }
 
 //RENDER MOVIES, DRAMA ETC
