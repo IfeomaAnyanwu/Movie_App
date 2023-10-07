@@ -1,8 +1,46 @@
 //TARGETING MOVIE HTML CONTAINER
 const movieContainer = document.querySelector("#movies");
+//  TARGETING THE HERO SEARCH INPUT
+const text = document.getElementById("search-text");
+const searchButton = document.getElementById("search-button");
+
+//TARGETING THE NAVBAR SEARCH INPUT
+const searchPage = document.getElementById("search-page");
+const searchButton2 = document.getElementById("search-button2");
+
+let searchText;
+let search_url;
+
+// HERO SEARCH INPUT FUNCTION
+function input() {
+  if (text.value.length == 0) {
+    alert("Type Something");
+    return false;
+  }
+  searchText = text.value;
+  search_url = `https://api.themoviedb.org/3/search/movie?query=${searchText}&include_adult=true&language=en-US&page=1`;
+  //console.log(search_url);
+  document.getElementById("search-text").value = "";
+}
+
+// NAVBAR SEARCH INPUT FUNCTION
+function input2() {
+  if (searchPage.value.length == 0) {
+    alert("Type Something");
+    return false;
+  }
+  searchText = searchPage.value;
+  search_url = `https://api.themoviedb.org/3/search/movie?query=${searchText}&include_adult=true&language=en-US&page=1`;
+  document.getElementById("search-page").value = "";
+}
 
 //AUTHENTICATION WITH TMDB
 const url = "https://api.themoviedb.org/3/authentication";
+
+/*
+//SEARCH MOVIE URL
+const search_url = `https://api.themoviedb.org/3/search/movie?query=${searchText}&include_adult=true&language=en-US&page=1`;
+*/
 
 // GENERAL MOVIES URL
 const movie_url =
@@ -64,6 +102,25 @@ function getThriller() {
 
 //===============================END OF TESTING PLEASE DELETE LATER=====================================================//
 */
+
+//SEARCH MOVIES
+function searchMovies() {
+  movieContainer.innerHTML = " ";
+  //fetch movies on the TMDB url provided
+  fetch(search_url, options)
+    //convert the fetched movies code to json
+    .then((res) => res.json())
+    // log the code in json format as converted
+    //.then((json) => console.log(json))//change to the line below to call the render movie function
+    .then((json) => renderMovies(json.results)) //results is the array name of the 20 received movies.
+    //if there is error, catch and log it
+    .catch((err) => console.log("error:" + err));
+}
+
+// PLAY POPULAR MOVIES
+function playPopular() {
+  window.location.assign("https://www.themoviedb.org/tv/3151-popular");
+}
 
 //GET ALL MOVIES
 function getMovies() {
@@ -222,10 +279,12 @@ function renderMovies(movielist) {
   });
 }
 
+/*
 //COPYRIGHT DATE
 // select span
 const date = (document.getElementById("date").innerHTML =
   new Date().getFullYear());
+*/
 
 // NAVBAR TOGGLE FOR MOBILE SCREEN
 function showNavLinks() {
