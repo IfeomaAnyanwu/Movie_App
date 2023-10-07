@@ -55,8 +55,17 @@
         <!--------------More ends---------->
       </ul>
       <div id="others">
-        <input type="text" id="search-page" placeholder="Search" />
-        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+        <input
+          type="text"
+          id="search-page"
+          class="search-text"
+          placeholder="Search"
+        />
+        <i
+          class="fa-sharp fa-solid fa-magnifying-glass"
+          onclick="input2(); searchMovies()"
+          id="search-button2"
+        ></i>
       </div>
       <div id="signIn">
         <a href="signIn.html" id="sign-in">sign in</a>
@@ -72,9 +81,20 @@
           options
         </h2>
         <div id="search">
-          <input type="text" placeholder="Search for a movie, TV Show...." />
+          <input
+            type="text"
+            placeholder="Search for a movie, TV Show...."
+            id="search-text"
+            class="search-text"
+          />
 
-          <button>Search</button>
+          <button
+            id="search-button"
+            class="search-button"
+            onclick="input (); searchMovies()"
+          >
+            Search
+          </button>
         </div>
       </div>
     </section>
